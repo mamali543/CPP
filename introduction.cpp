@@ -6,7 +6,7 @@
 /*   By: mamali <mamali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 08:38:13 by mamali            #+#    #+#             */
-/*   Updated: 2021/11/20 17:50:41 by mamali           ###   ########.fr       */
+/*   Updated: 2021/11/20 18:35:58 by mamali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@
     Exemple: Rectangle rectangle1;
      -declare une instance rectangle1 de la classe Rectangle.
     *les methodes n'ont pas besoin de prendre des parametres
-        tous les attributs d'une classe sont connus de l'entierte de cette classe et en particulier de chacune de ces methodes
-        
+        tous les attributs d'une classe sont connus de l'entierte de cette classe et en particulier de chacune de ces methodes.
     */
