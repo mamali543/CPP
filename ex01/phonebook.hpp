@@ -5,16 +5,16 @@
 
 using namespace std;
 
-class myclass{
-    public:
-        string brand;
-        string model;
-        int year;   
-        myclass(string p, string s, int a) {
-            brand = p;
-            model = s;
-            year = a;
-        }
+class phonebook{
+	private:
+		string	f_name;
+		string	l_name;
+		string	phone_number;
+		string  dark_secret;   
+	public:
+		void setfs(string fs){
+			f_name = fs;
+		}
 };
 
 #endif
