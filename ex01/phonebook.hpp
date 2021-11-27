@@ -8,8 +8,10 @@
 class PhoneBook{
 	private:
 		Contact _contact[8];
+		 int			_i ;
 	public:
 		void add(Contact c);
+		PhoneBook();
 };
 
 #endif

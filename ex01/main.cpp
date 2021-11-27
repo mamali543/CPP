@@ -25,6 +25,12 @@ Contact getParam()
 
     std::cout << "First name: ";
     std::getline(std::cin ,name);
+    while (name.empty())
+    {
+        std::cout << " Invalid args\n";
+        std::cout << "First name: ";
+        std::getline(std::cin ,name);
+    }
     std::cout << "Last name: ";
     std::getline(std::cin ,lname);
     std::cout << "Nick name: ";
@@ -33,9 +39,6 @@ Contact getParam()
     std::getline(std::cin ,pn);
     std::cout << "Dark secret: ";
     std::getline(std::cin ,ds);
-    if (lname.empty() || ds.empty() || !ft_isdigit(pn) \
-         || nname.empty() || name.empty())
-            std::cout << "invalid_argument!" << std::endl;
     contact.setContact(name,lname , nname, pn , ds);
     return (contact);
 }
@@ -50,9 +53,7 @@ int main()
     while (std::getline(std::cin,line))
     {
         if (line.compare("ADD") == 0)
-        {
             phone.add(getParam());
-        }
         else if (line.compare("SEARCH") == 0)
             std::cout << line << std::endl;
         else if (line.compare("EXIT") == 0)

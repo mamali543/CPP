@@ -8,7 +8,7 @@ void Contact::setContact(std::string fn, std::string ln , std::string nn, std::s
     phone_number = pn;
     dark_secret = ds;
 }
-void Contact::printContact()
-{
-    std::cout << f_name << std::endl;
-}
+// void Contact::printContact()
+// {
+//     std::cout << f_name << std::endl;
+// }
