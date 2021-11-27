@@ -1,38 +1,63 @@
 #include "phonebook.hpp"
 
+int     ft_isdigit(std::string s)
+{
+    int     i;
+
+    i = 0;
+    while (s[i])
+    {
+        if (!isdigit(s[i]))
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
+Contact getParam()
+{
+    std::string  name;
+    std::string  lname;
+    std::string  nname;
+    std::string  pn;
+    std::string  ds;
+    Contact contact;
+
+    std::cout << "First name: ";
+    std::getline(std::cin ,name);
+    std::cout << "Last name: ";
+    std::getline(std::cin ,lname);
+    std::cout << "Nick name: ";
+    std::getline(std::cin ,nname);
+    std::cout << "Phone number: ";
+    std::getline(std::cin ,pn);
+    std::cout << "Dark secret: ";
+    std::getline(std::cin ,ds);
+    if (lname.empty() || ds.empty() || !ft_isdigit(pn) \
+         || nname.empty() || name.empty())
+            std::cout << "invalid_argument!" << std::endl;
+    contact.setContact(name,lname , nname, pn , ds);
+    return (contact);
+}
+
 int main()
 {
-    string p;
-    string t;
-    phonebook phone;
-
-    // getline(cin, t);
-    // cout << t << endl;
-    while (1)
+    std::string line;
+    std::string t;
+    PhoneBook phone;
+    Contact contact;
+    std::cout << "$cmd>" ; 
+    while (std::getline(std::cin,line))
     {
-        cout << "$cmd>" ; 
-        cin >> p;
-        if (p.compare("ADD") == 0)
+        if (line.compare("ADD") == 0)
         {
-            cout << "First name: ";
-            cin.ignore();
-            getline(cin, t);
-            phone.setfs(t);
-            cout << "Last name: ";
-            getline(cin, t);
-            phone.setln(t);
-            cout << "Phone number: ";
-            getline(cin, t);
-            phone.setpn(t);
-            cout << "Darkest secret: ";
-            getline(cin, t);
-            phone.setds(t);
-            cout << phone.getfs() << endl << phone.getln() << endl << phone.getpn() << endl << phone.getds() << endl;   
+            phone.add(getParam());
         }
-        else if (p.compare("SEARCH") == 0)
-            cout << p << endl;
-        else if (p.compare("exit") == 0)
+        else if (line.compare("SEARCH") == 0)
+            std::cout << line << std::endl;
+        else if (line.compare("EXIT") == 0)
             break ;
+        std::cout << "$cmd>" ; 
     }
     return (0);
 }
