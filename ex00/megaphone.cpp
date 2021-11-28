@@ -28,8 +28,12 @@ int main(int argc, char **argv)
 	{
 		while (argv[i])
 		{
-			str = to_upper(argv[i++]);
-			cout << str;
+			str = to_upper(argv[i]);
+			if (i == (argc - 1))
+				cout << str;
+			else
+				cout << str << " ";
+			i++;
 		}
 		cout << endl;
 	}
