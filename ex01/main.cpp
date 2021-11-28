@@ -1,9 +1,8 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int     ft_isdigit(std::string s)
 {
     int     i;
-
     i = 0;
     while (s[i])
     {
@@ -14,51 +13,57 @@ int     ft_isdigit(std::string s)
     return (1);
 }
 
-Contact getParam()
+std::string    fun(std::string a)
 {
-    std::string  name;
-    std::string  lname;
-    std::string  nname;
-    std::string  pn;
-    std::string  ds;
-    Contact contact;
-
-    std::cout << "First name: ";
-    std::getline(std::cin ,name);
-    while (name.empty())
+    std::string b;
+    std::cout << "Enter " << a << " : ";
+    if (!std::getline(std::cin, b))
+        exit(0);
+    if (!a.compare("Phone Number"))
     {
-        std::cout << " Invalid args\n";
-        std::cout << "First name: ";
-        std::getline(std::cin ,name);
+        while (b.empty() || !ft_isdigit(b))
+        {
+            std::cout << a << " must not be empty or non degit\n";
+            std::cout  << "Enter " << a << " : ";
+            if (!std::getline(std::cin, b))
+                exit(0);
+        }      
     }
-    std::cout << "Last name: ";
-    std::getline(std::cin ,lname);
-    std::cout << "Nick name: ";
-    std::getline(std::cin ,nname);
-    std::cout << "Phone number: ";
-    std::getline(std::cin ,pn);
-    std::cout << "Dark secret: ";
-    std::getline(std::cin ,ds);
-    contact.setContact(name,lname , nname, pn , ds);
+    while (b.empty())
+    {
+        std::cout << a << " must not be empty\n";
+        std::cout << "Enter " << a << " : ";
+        if (!std::getline(std::cin, b))
+            exit(0);
+    }
+    return (b);
+}
+
+Contact     getParam()
+{
+    Contact contact;
+    contact.setContact(fun("First Name"), fun("Last Name"), fun("Nick Name"), fun("Phone Number"), fun("Dark secret"));
     return (contact);
 }
 
 int main()
 {
     std::string line;
-    std::string t;
-    PhoneBook phone;
-    Contact contact;
-    std::cout << "$cmd>" ; 
-    while (std::getline(std::cin,line))
+    PhoneBook   phone;
+    Contact     contact;
+    std::cout << "cmd> ";
+    while (std::getline(std::cin, line))
     {
-        if (line.compare("ADD") == 0)
+        if (!line.compare("ADD"))
             phone.add(getParam());
-        else if (line.compare("SEARCH") == 0)
-            std::cout << line << std::endl;
-        else if (line.compare("EXIT") == 0)
+        else if(!line.compare("SEARCH"))
+        {
+            std::cout << "index | first name | last name | nick name" << std::endl;
+            phone.get();
+        }
+        else if(!line.compare("EXIT"))
             break ;
-        std::cout << "$cmd>" ; 
+        std::cout << "cmd> ";
     }
     return (0);
 }
