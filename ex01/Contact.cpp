@@ -5,16 +5,34 @@ std::string Contact::getFname()
     return(f_name);
 }
 
-std::string help1(std::string p)
+std::string Contact::getLname()
+{
+    return(l_name);
+}
+
+std::string Contact::getNname()
+{
+    return(n_name);
+}
+
+std::string Contact::getPn()
+{
+    return(phone_number);
+}
+
+std::string Contact::getDs()
+{
+    return(dark_secret);
+}
+
+std::string modifyString(std::string p)
 {
     int i = 1;
     while (p[i])
         i++;
-    // std::cout << "\n" << i << std::endl;
     if (i < 10)
         return(p);
     p.resize (9);
-    // std::cout << p << std::endl;
     return (p);
 }
 

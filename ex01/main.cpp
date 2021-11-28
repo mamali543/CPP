@@ -70,11 +70,6 @@ int main()
     PhoneBook   phone;
     Contact     contact;
     std::cout << "cmd> ";
-    contact.setContact("dcgd", "dgf", "hjd", "ytègy!", "gd");
-    int     i = 0;
-    for(int j  = 0 ; j < 8 ; j++)
-            phone.add(contact);
-
     while (std::getline(std::cin, line))
     {
         if (!line.compare("ADD"))
@@ -82,10 +77,10 @@ int main()
         else if(!line.compare("SEARCH"))
         {
             std::string p;
-            std::cout << "index" << std::setw(help("index", 0)) << "|";
-            std::cout << "first name" << std::setw(help("first name", 0)) << "|";
-            std::cout << "last name" << std::setw(help("last name", 0)) << "|";
-            std::cout << "nick name" << std::setw(help("nick name", 0)) << "|" << std::endl;
+            std::cout << "index" << std::setw(mysetw("index", 0)) << "|";
+            std::cout << "first name" << std::setw(mysetw("first name", 0)) << "|";
+            std::cout << "last name" << std::setw(mysetw("last name", 0)) << "|";
+            std::cout << "nick name" << std::setw(mysetw("nick name", 0)) << "|" << std::endl;
             phone.FillContact();
             p = fun("Index: ", phone.getNContact());
             if (phone.getNContact() > 0)

@@ -14,7 +14,7 @@ void    PhoneBook::add(Contact c)
     std::cout << "Contact added Succesfully!" << std::endl;
 }
 
-int     help(std::string s, int a)
+int     mysetw(std::string s, int a)
 {
     int     i;
 
@@ -28,17 +28,12 @@ int     help(std::string s, int a)
     return (0);
 }
 
-void    fon(Contact c, int i, int j)
+void    PrintAgenda(Contact c, int i)
 {
     std::cout << i << std::setw(10) << "|";
-    std::cout << help1(c.getFname()) << std::setw(help(c.getFname(), 1)) << "|";
-    std::cout << help1(c.getLname()) << std::setw(help(c.getLname(), 1)) << "|";
-    std::cout << help1(c.getNname()) << std::setw(help(c.getNname(), 1)) << "|";
-    if (j == 1)
-    {
-        std::cout << help1(c.getPn()) << std::setw(help(c.getPn(), 1)) << "|";
-        std::cout << help1(c.getDs()) << std::setw(help(c.getDs(), 1)) << "|";
-    }
+    std::cout << modifyString(c.getFname()) << std::setw(mysetw(c.getFname(), 1)) << "|";
+    std::cout << modifyString(c.getLname()) << std::setw(mysetw(c.getLname(), 1)) << "|";
+    std::cout << modifyString(c.getNname()) << std::setw(mysetw(c.getNname(), 1)) << "|";
     std::cout << std::endl;
 }
 
@@ -51,9 +46,20 @@ void    PhoneBook::FillContact()
         j = 8;
     while(i < j)
     {
-        fon(_contact[i], i + 1, 0);
+        PrintAgenda(_contact[i], i + 1);
         i++;
     }
+}
+
+void    printContact(Contact c, int i)
+{
+    std::cout << "         **********************        " << std::endl;
+    std::cout << "Index        >> " << i << std::endl;
+    std::cout << "First Name   >> " << c.getFname() << std::endl;
+    std::cout << "Last Name    >> " << c.getLname() << std::endl;
+    std::cout << "Nick Name    >> " << c.getNname() << std::endl;
+    std::cout << "Phone Number >> " << c.getPn() << std::endl;
+    std::cout << "Dark Secret  >> " << c.getDs() << std::endl;
 }
 
 void    PhoneBook::getContact(std::string p)
@@ -64,7 +70,10 @@ void    PhoneBook::getContact(std::string p)
     while(i < 8)
     {
         if (i + 1 == std::stoi(p))
-            fon(_contact[i], i + 1, 1);
+        {
+            printContact(_contact[i], i + 1);
+            break ;
+        }
         i++;
     }
 }

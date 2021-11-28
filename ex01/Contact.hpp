@@ -17,23 +17,10 @@ private:
 public:
     void setContact(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds);
     std::string getFname();
-    std::string getLname()
-    {
-        return(l_name);
-    }
-    std::string getNname()
-    {
-        return(n_name);
-    }
-    std::string getPn()
-    {
-        return(phone_number);
-    }
-    std::string getDs()
-    {
-        return(dark_secret);
-    }
-
+    std::string getLname();
+    std::string getNname();
+    std::string getPn();
+    std::string getDs();
 };
 
 
