@@ -28,15 +28,21 @@ int     help(std::string s, int a)
     return (0);
 }
 
-void    fon(Contact c, int i)
+void    fon(Contact c, int i, int j)
 {
     std::cout << i << std::setw(10) << "|";
     std::cout << help1(c.getFname()) << std::setw(help(c.getFname(), 1)) << "|";
     std::cout << help1(c.getLname()) << std::setw(help(c.getLname(), 1)) << "|";
-    std::cout << help1(c.getNname()) << std::setw(help(c.getNname(), 1)) << "|" << std::endl;
+    std::cout << help1(c.getNname()) << std::setw(help(c.getNname(), 1)) << "|";
+    if (j == 1)
+    {
+        std::cout << help1(c.getPn()) << std::setw(help(c.getPn(), 1)) << "|";
+        std::cout << help1(c.getDs()) << std::setw(help(c.getDs(), 1)) << "|";
+    }
+    std::cout << std::endl;
 }
 
-void    PhoneBook::get()
+void    PhoneBook::FillContact()
 {
     int     i;
 
@@ -45,7 +51,20 @@ void    PhoneBook::get()
         j = 8;
     while(i < j)
     {
-        fon(_contact[i], i + 1);
+        fon(_contact[i], i + 1, 0);
+        i++;
+    }
+}
+
+void    PhoneBook::getContact(std::string p)
+{
+    int     i;
+
+    i = 0;
+    while(i < 8)
+    {
+        if (i + 1 == std::stoi(p))
+            fon(_contact[i], i + 1, 1);
         i++;
     }
 }

@@ -16,7 +16,12 @@ private:
 public:
     PhoneBook();
     void    add(Contact c);
-    void    get();
+    void    FillContact();
+    void    getContact(std::string p);
+    int     getNContact()
+    {
+        return (j);
+    }
 };
 
 std::string help1(std::string p);

@@ -13,7 +13,7 @@ int     ft_isdigit(std::string s)
     return (1);
 }
 
-std::string    fun(std::string a)
+std::string    fun(std::string a, int i)
 {
     std::string b;
     std::cout << "Enter " << a << " : ";
@@ -29,6 +29,24 @@ std::string    fun(std::string a)
                 exit(0);
         }      
     }
+    else if (!a.compare("Index: "))
+    {
+        while (b.empty() || !ft_isdigit(b) || std::stoi(b) > i || std::stoi(b) <= 0)
+        {
+            if (i > 0)
+            {
+                std::cout << "Invalid " << a << "\n";
+                std::cout  << "Enter " << a << " : ";
+                if (!std::getline(std::cin, b))
+                    exit(0);
+            }
+            else
+            {
+                std::cout << "No Contact has been added yet!, Pleas try to add a contact"<< "\n";
+                break ;
+            }
+        } 
+    }
     while (b.empty())
     {
         std::cout << a << " must not be empty\n";
@@ -42,7 +60,7 @@ std::string    fun(std::string a)
 Contact     getParam()
 {
     Contact contact;
-    contact.setContact(fun("First Name"), fun("Last Name"), fun("Nick Name"), fun("Phone Number"), fun("Dark secret"));
+    contact.setContact(fun("First Name", 0), fun("Last Name", 0), fun("Nick Name", 0), fun("Phone Number", 0), fun("Dark secret", 0));
     return (contact);
 }
 
@@ -52,18 +70,31 @@ int main()
     PhoneBook   phone;
     Contact     contact;
     std::cout << "cmd> ";
+    contact.setContact("dcgd", "dgf", "hjd", "ytègy!", "gd");
+    int     i = 0;
+    for(int j  = 0 ; j < 8 ; j++)
+            phone.add(contact);
+
     while (std::getline(std::cin, line))
     {
         if (!line.compare("ADD"))
             phone.add(getParam());
         else if(!line.compare("SEARCH"))
         {
-            //std::cout << "index" << std::setw(10) << "|" << "first name" << std::setw(10) << "|" << "last name" << std::setw(10) << "|" << "nick name" << std::setw(10) << "|" << std::endl;
+            std::string p;
             std::cout << "index" << std::setw(help("index", 0)) << "|";
             std::cout << "first name" << std::setw(help("first name", 0)) << "|";
             std::cout << "last name" << std::setw(help("last name", 0)) << "|";
             std::cout << "nick name" << std::setw(help("nick name", 0)) << "|" << std::endl;
-            phone.get();
+            phone.FillContact();
+            p = fun("Index: ", phone.getNContact());
+            if (phone.getNContact() > 0)
+                phone.getContact(p);
+            else
+            {
+                std::cout << "cmd> ";
+                continue;
+            }
         }
         else if(!line.compare("EXIT"))
             break ;

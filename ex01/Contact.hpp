@@ -25,6 +25,14 @@ public:
     {
         return(n_name);
     }
+    std::string getPn()
+    {
+        return(phone_number);
+    }
+    std::string getDs()
+    {
+        return(dark_secret);
+    }
 
 };
 
