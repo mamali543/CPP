@@ -20,5 +20,6 @@ public:
 };
 
 std::string help1(std::string p);
+int     help(std::string s, int a);
 
 #endif

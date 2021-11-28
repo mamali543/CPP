@@ -58,7 +58,11 @@ int main()
             phone.add(getParam());
         else if(!line.compare("SEARCH"))
         {
-            std::cout << "index | first name | last name | nick name" << std::endl;
+            //std::cout << "index" << std::setw(10) << "|" << "first name" << std::setw(10) << "|" << "last name" << std::setw(10) << "|" << "nick name" << std::setw(10) << "|" << std::endl;
+            std::cout << "index" << std::setw(help("index", 0)) << "|";
+            std::cout << "first name" << std::setw(help("first name", 0)) << "|";
+            std::cout << "last name" << std::setw(help("last name", 0)) << "|";
+            std::cout << "nick name" << std::setw(help("nick name", 0)) << "|" << std::endl;
             phone.get();
         }
         else if(!line.compare("EXIT"))

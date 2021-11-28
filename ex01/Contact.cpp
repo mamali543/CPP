@@ -10,9 +10,11 @@ std::string help1(std::string p)
     int i = 1;
     while (p[i])
         i++;
-    if (i <= 10)
+    // std::cout << "\n" << i << std::endl;
+    if (i < 10)
         return(p);
     p.resize (9);
+    // std::cout << p << std::endl;
     return (p);
 }
 
