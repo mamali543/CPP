@@ -1,6 +1,6 @@
 SRCS = main.cpp 
 
-NAME = Zombie
+NAME = Brain
 
 FLAGS = -Wall -Werror -Wextra
 
