@@ -2,15 +2,14 @@
 #include <string>
 
 
-
-
 int     main()
 {
-    std::string p;
-    std::string *ptr;
+    std::string p = "HI THIS IS BRAIN";
+    std::string *stringPTR = &p;
+    std::string& stringREF = p;
 
-    p = "HI THIS IS BRAIN";
-    ptr = &p;
-    
+    std::cout << &p << "  " << stringPTR << "  " << &stringREF << std::endl;
+    std::cout << *stringPTR << "  " << stringREF << std::endl;
+
     return (0);
 }

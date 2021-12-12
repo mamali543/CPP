@@ -1,18 +1,14 @@
-#include    "Zombie.hpp"
+#include "Zombie.hpp"
 
-Zombie* zombieHorde( int N, std::string name)
+Zombie* zombieHorde(int N, std::string name)
 {
-    int     i;
+    Zombie  *p;
 
-    i = 0;
-    Zombie  *zombies;
-    zombies = new Zombie[N];
-
-    while (i < N)
+    p = new Zombie[N];
+    for (int i = 0; i < N; i++)
     {
-        Zombie  *z = new Zombie(name);
-        zombies[i] = *z;
-        i++;
+        Zombie  *s = new Zombie(name);
+        p[i] = *s;
     }
-    return (zombies);
+    return (p);
 }

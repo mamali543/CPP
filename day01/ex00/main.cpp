@@ -2,11 +2,11 @@
 
 int     main()
 {
-    Zombie a("reda");
+    Zombie  a("reda");
     a.announce();
-    Zombie *b = newZombie("saad");
-    b->announce();
-    randomChump("floki");
-    delete(b);
     return (0);
+    Zombie  *b;
+    b = newZombie("ader");
+    b->announce();
+    delete b;
 }
