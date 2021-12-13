@@ -2,33 +2,6 @@
 #include <fstream>
 #include <string>
 
-
-// int main () {
-//   // Create a text file
-//   ofstream MyWriteFile("filename.txt");
-
-//   // Write to the file
-//   MyWriteFile << "Files can be tricky,\n" << std::endl << "but it is fun enough!\ngvgrhvhbrhbbgrt\nughrtugrhhbhr\n";
- 
-//   // Close the file
-//   MyWriteFile.close();
-
-//   // Create a text string, which is used to output the text file
-//   string myText;
-
-//   // Read from the text file
-//   ifstream MyReadFile("filename.txt");
-
-//   // Use a while loop together with the getline() function to read the file line by line
-//   while (getline (MyReadFile, myText)) {
-//     // Output the text from the file
-//     cout << myText;
-//   }
-
-//   // Close the file
-//   MyReadFile.close();
-// }
-
 int     main(int    argc, char**    argv)
 {
     int     i;
@@ -56,13 +29,12 @@ int     main(int    argc, char**    argv)
         if (i != 0)
             Myfile << '\n';
         found = text.find(s1, 0);
-        std::cout << found << std::endl;
-        // if (found == std::string::npos)
-        //     b = text;
         while (found != std::string::npos)
         {
             a = text.substr(start, found - start);
+            std::cout << "a>>" << a << "\n----------\n";
             b = b + a + s2;
+            std::cout << "b>>" << b << "\n";
             start = found + s1.size();
             found = text.find(s1, found + s1.size());
         }
