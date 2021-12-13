@@ -1,5 +1,6 @@
 SRCS = main.cpp\
 	   HumanA.cpp\
+	   HumanB.cpp\
 	   Weapon.cpp
 
 FLAGS = -Wall -Werror -Wextra
