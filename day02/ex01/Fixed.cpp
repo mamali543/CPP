@@ -3,8 +3,21 @@
 Fixed::Fixed()
 {
     std::cout << "Default constructor called\n";
-    fp = 0;
+    this->fp = 0;
 }
+
+Fixed::Fixed(const int a)
+{
+    std::cout << "Int constructor called\n";
+    this->setRawBits(a * (1 << fb));
+}
+
+Fixed::Fixed(const float b)
+{
+    std::cout << "Float constructor called\n";
+    this->setRawBits(round(b * (1 << fb)));
+}
+
 Fixed::~Fixed()
 {
     std::cout << "Destructor called\n";
@@ -21,15 +34,31 @@ Fixed& Fixed::operator=(const Fixed &other)
 {
     std::cout << "Assignation operator called" << std::endl;
     if (this != &other)
-        fp = other.getRawBits();
+        this->fp = other.fp;
     return *this;
 }
 
 int Fixed::getRawBits(void) const{
     std::cout << "getRawBits member function called\n";
-    return(fp);
+    return(this->fp);
 }
 
 void Fixed::setRawBits(int const row){
-    fp = row;
+    this->fp = row;
+}
+
+float Fixed::toFloat( void ) const
+{
+    return (float)fp / (float)(1 << fb);
+}
+
+int Fixed::toInt( void ) const
+{
+    return (fp >> 8);
+}
+
+std::ostream &operator<<(std::ostream &os, const Fixed &x)
+{ 
+    os << x.toFloat();
+    return (os);
 }
