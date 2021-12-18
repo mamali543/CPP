@@ -10,6 +10,7 @@ Fixed::Fixed(const int a)
 {
     std::cout << "Int constructor called\n";
     fp = a << fb;
+    std::cout << "here's fp : " << fp << std::endl;
 }
 
 Fixed::Fixed(const float b)
@@ -28,6 +29,7 @@ Fixed::Fixed(const Fixed &old_object)
 {
     std::cout << "Copy constructor called\n";
     *this = old_object;
+    std::cout << " here's this: " << *this << "   " << old_object.fp << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed &other) 
@@ -102,11 +104,11 @@ Fixed Fixed::operator-( const Fixed &other)const
     return (tmp);
 }
 
-Fixed Fixed::operator*( const Fixed &other)const
-{
-    Fixed   tmp(*this);
+// Fixed Fixed::operator*( const Fixed &other)const
+// {
+//     Fixed   tmp(*this);
 
-}
+// }
 
 Fixed&		Fixed::operator++()
 {

@@ -28,10 +28,10 @@ public:
     Fixed operator+( const Fixed &other)const;
     Fixed operator-( const Fixed &other)const;
     Fixed operator*( const Fixed &other)const;
-    Fixed&		Fixed::operator++();
-    Fixed&		Fixed::operator--();
-    Fixed		Fixed::operator++( int );
-    Fixed		Fixed::operator--( int );
+    Fixed&		operator++();
+    Fixed&		operator--();
+    Fixed		operator++( int );
+    Fixed		operator--( int );
 
 };
 
