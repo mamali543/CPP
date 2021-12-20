@@ -63,7 +63,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::ClapTrap(const ClapTrap &old_obj)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "ClapTrap Copy constructor called\n";
     this->operator=(old_obj);
 }
 

@@ -15,7 +15,7 @@ ScavTrap::ScavTrap(std::string s) : ClapTrap(s)
 
 ScavTrap::ScavTrap(const ScavTrap &old_obj): ClapTrap(old_obj)
 {
-
+    std::cout << "ScavTrap copy constructor called\n";
 }
 
 ScavTrap::~ScavTrap()
@@ -43,5 +43,5 @@ void ScavTrap::guardGate()
 
 void ScavTrap::attack(std::string const & target)
 {
-    std::cout << "ScrapTrap " << this->name << " attack " << target<< " , causing " << this->getAd() << " points of damage!" << std::endl;
+    std::cout << "ScavTrap " << this->name << " attack " << target<< " , causing " << this->getAd() << " points of damage!" << std::endl;
 }

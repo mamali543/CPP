@@ -1,10 +1,11 @@
 SRCS = main.cpp\
 	   ClapTrap.cpp\
-	   ScavTrap.cpp
+	   ScavTrap.cpp\
+	   FragTrap.cpp
 
 FLAGS = -Wall -Werror -Wextra
 
-NAME = ScavTrap
+NAME = FragTrap
 
 all :: $(NAME)
 
