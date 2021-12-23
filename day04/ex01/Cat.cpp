@@ -3,6 +3,7 @@
 Cat::Cat() : Animal("Cat")
 {
     std::cout << "Cat constructor called\n";
+    a = new Brain();
 }
 
 void Cat::makeSound() const

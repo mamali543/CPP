@@ -3,9 +3,12 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat:public  Animal
 {
+private:
+    Brain *a;
 public:
     Cat& operator=(const Cat &other);
     Cat();
