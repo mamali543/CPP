@@ -9,12 +9,12 @@ class Brain
 protected:
    std::string ideas[100];
 public:
+    Brain(std::string *ideas); 
     Brain(const Brain &old_obj);
     ~Brain();
     Brain& operator=(const Brain &other);
-    Brain(std::string type);
     Brain();
+    std::string	*getIdeas();
 };
-
 
 #endif
