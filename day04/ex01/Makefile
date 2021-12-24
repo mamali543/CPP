@@ -1,8 +1,7 @@
 SRCS = main.cpp\
 	   Cat.cpp\
 	   Dog.cpp\
-	   wrongAnimal.cpp\
-	   wrongCat.cpp\
+	   Brain.cpp\
 	   Animal.cpp
 
 FLAGS = -Wall -Werror -Wextra

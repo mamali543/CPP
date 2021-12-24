@@ -12,16 +12,6 @@ Brain::Brain( const Brain & src )
 
 }
 
-Brain::Brain(std::string *ideas) 
-{
-	std::cout << "Brain Ideas constructor called" << std::endl;
-	for(int i = 0; i < 100; i++)
-	{
-		this->ideas[i] = ideas[i];
-	}
-}
-
-
 Brain::~Brain()
 {
 	std::cout << "Brain " << "Destructor" << std::endl;
@@ -33,13 +23,20 @@ Brain &				Brain::operator=( Brain const & rhs )
 	{
 		for(int i = 0; i < 100; i++)
 		{
+
 			this->ideas[i] = rhs.ideas[i];
 		}
 	}
 	return *this;
 }
 
-std::string	*Brain::getIdeas()
+void Brain::setideas(const std::string& str, int i)
 {
-	return (this->ideas);
+	this->ideas[i] = str;
 }
+
+const std::string& Brain::getidea(int i) const
+{
+	return (this->ideas[i]);
+}
+
