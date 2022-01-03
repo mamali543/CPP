@@ -13,7 +13,7 @@ wrongAnimal::~wrongAnimal()
 
 wrongAnimal::wrongAnimal()
 {
-
+    std::cout << "wrongAnimal default constructor called\n";
 }
 
 wrongAnimal& wrongAnimal::operator=(const wrongAnimal &other)

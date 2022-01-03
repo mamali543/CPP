@@ -13,7 +13,7 @@ Animal::~Animal()
 
 Animal::Animal()
 {
-
+    std::cout << "Animal default constructor called\n";
 }
 
 Animal& Animal::operator=(const Animal &other)

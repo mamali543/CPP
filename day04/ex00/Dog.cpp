@@ -12,7 +12,7 @@ void Dog::makeSound() const
 
 Dog::~Dog()
 {
-    std::cout << "Dog deconstructor called\n";
+    std::cout << "Dog destructor called\n";
 }
 
 Dog::Dog(const Dog &old_obj) : Animal(old_obj)
