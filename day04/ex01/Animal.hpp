@@ -18,5 +18,4 @@ public:
     virtual const std::string& getType() const;
 };
 
-
 #endif
