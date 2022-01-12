@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/ex01/ScavTrap",
+            "program": "${workspaceFolder}/day05/ex00/Bureaucrat",
             "args": [],
             "cwd": "${workspaceFolder}"
         }
