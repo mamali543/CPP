@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-
+#include "Bureaucrat.hpp"
 
 class Form
 {
@@ -18,7 +18,11 @@ public:
     Form(Form const & old_obj);
 	Form &		operator=(Form const & other);
 	std::string	getName(void) const;
-	int			getGrade(void) const;
+	int			getTsign(void) const;
+	int			getTexecute(void) const;
+	bool		getIsigned(void) const;
+	Form &		besigned(Bureaucrat & Bureauc);
+	void		setFormSigned();
 	class GradeTooLowException: public std::exception
 	{
 		virtual const char* what() const throw();

@@ -2,8 +2,9 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-// #include <exception>
+#include <exception>
 #include <string>
+#include "form.hpp"
 
 class Bureaucrat
 {
@@ -17,8 +18,9 @@ public:
 	Bureaucrat &		operator=(Bureaucrat const & other);
 	std::string	getName(void) const;
 	int			getGrade(void) const;
-	void	increment(void);
-	void	decrement(void);
+	void		increment(void);
+	void		decrement(void);
+	void		signForm(Form & form);
 	class GradeTooLowException: public std::exception
 	{
 		virtual const char* what() const throw();

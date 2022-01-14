@@ -60,3 +60,14 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & b)
     o << b.getName() << " , bureaucrat grade: " << b.getGrade() << ".";
     return (o);
 }
+
+/*        -------sign_form function added--------        */ 
+
+void		Bureaucrat::signForm(Form & form)
+{
+    if (form.getTsign() > this->getGrade())
+        std::cout << "The Bureacrat: " << this->getName() << " has succesfully signed " << form.getName() << std::endl;
+    else
+        std::cout << "The Bureacrat: " << this->getName() << " couldn't sign " << form.getName() << std::endl;
+}
+
