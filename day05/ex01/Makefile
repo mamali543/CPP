@@ -1,5 +1,6 @@
 SRCS = main.cpp\
-	   Bureaucrat.cpp	
+	   Bureaucrat.cpp\
+	   Form.cpp	
 
 FLAGS = -Wall -Werror -Wextra
 

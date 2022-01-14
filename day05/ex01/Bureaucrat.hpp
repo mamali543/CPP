@@ -15,8 +15,8 @@ public:
 	~Bureaucrat();
 	Bureaucrat(Bureaucrat const & old_obj);
 	Bureaucrat &		operator=(Bureaucrat const & other);
-	std::string	getName(void) const; //
-	int			getGrade(void) const; //erreur de compilation
+	std::string	getName(void) const;
+	int			getGrade(void) const;
 	void	increment(void);
 	void	decrement(void);
 	class GradeTooLowException: public std::exception
