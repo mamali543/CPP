@@ -65,7 +65,7 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & b)
 
 void		Bureaucrat::signForm(Form & form)
 {
-    if (form.getTsign() > this->getGrade())
+    if (form.getgradeTsign() > this->getGrade())
         std::cout << "The Bureacrat: " << this->getName() << " has succesfully signed " << form.getName() << std::endl;
     else
         std::cout << "The Bureacrat: " << this->getName() << " couldn't sign " << form.getName() << std::endl;

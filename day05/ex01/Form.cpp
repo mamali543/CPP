@@ -2,13 +2,14 @@
 
 Form::~Form()
 {
-    std::cout << "destructor called\n" << std::endl;
+    std::cout << "destructor called" << std::endl;
 }
 
 /*                 ------constructor-------                   */
 
-Form::Form(std::string _name, int _to_sign, int _to_execute): name(_name), to_sign(_to_sign), to_execute(_to_execute), is_signed(0)
+Form::Form(std::string _name, int _to_sign, int _to_execute): name(_name), is_signed(0), grade_to_sign(_to_sign), grade_to_execute(_to_execute)
 {
+    std::cout << "Form constructor called" << std::endl;
     try
     {
         if (_to_execute < 1 || _to_sign < 1)
@@ -29,14 +30,14 @@ std::string	Form::getName(void) const
     return (this->name);
 }
 
-int			Form::getTsign(void) const
+int			Form::getgradeTsign(void) const
 {
-    return (this->to_sign);
+    return (this->grade_to_sign);
 }
 
-int			Form::getTexecute(void) const
+int			Form::getgradeTexecute(void) const
 {
-    return (this->to_execute);
+    return (this->grade_to_execute);
 }
 
 bool		Form::getIsigned(void) const
@@ -48,12 +49,12 @@ bool		Form::getIsigned(void) const
 
 const char * Form::GradeTooHighException::what() const throw()
 {
-    std::cout << "exception caught: grade is too high";
+    return ("exception caught: grade is too high");
 }
 
 const char * Form::GradeTooLowException::what() const throw()
 {
-    std::cout << "exception caught: grade is too low";
+    return ("exception caught: grade is too low");
 }
 
 /*              -----------overload operator----------               */
@@ -61,11 +62,11 @@ const char * Form::GradeTooLowException::what() const throw()
 std::ostream & operator<<(std::ostream& o, const Form & a)
 {
     if (a.getIsigned())
-        o << "the form: " << a.getName() << "is signed\n";
+        o << "the form: " << a.getName() << " is signed\n";
     else
-        o << "the form: " << a.getName() << "is not signed\n";
-	o << "grade to exec: " << a.getTexecute() << std::endl;
-	o << "grade to sign: " << a.getTsign();
+        o << "the form: " << a.getName() << " is not signed\n";
+	o << "grade to exec: " << a.getgradeTexecute() << std::endl;
+	o << "grade to sign: " << a.getgradeTsign();
     return (o);
 }
 
@@ -73,7 +74,7 @@ std::ostream & operator<<(std::ostream& o, const Form & a)
 
 Form &		Form::besigned(Bureaucrat & Bureauc)
 {
-    if (Bureauc.getGrade() > this->getTsign())
+    if (Bureauc.getGrade() > this->getgradeTsign())
         throw GradeTooLowException();
     this->setFormSigned();
     Bureauc.signForm(*this);
