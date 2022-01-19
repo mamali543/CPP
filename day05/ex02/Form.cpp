@@ -2,7 +2,7 @@
 
 Form::~Form()
 {
-    std::cout << "destructor called" << std::endl;
+    std::cout << "Form destructor called" << std::endl;
 }
 
 /*                 ------constructor-------                   */

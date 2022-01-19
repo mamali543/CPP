@@ -18,12 +18,6 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 	return *this;
 }
 
-// ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & old_object)
-// {
-//     std::cout << "Shrubbery coppy constructor called\n";
-//     this->operator=(old_object);
-// }
-
 std::ostream &			operator<<( std::ostream & o, const ShrubberyCreationForm & Shrubbery )
 {
 	if (Shrubbery.getIsigned())

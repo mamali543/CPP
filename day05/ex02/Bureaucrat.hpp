@@ -23,6 +23,7 @@ public:
 	void		increment(void);
 	void		decrement(void);
 	void		signForm(Form & form);
+	void		executeForm(Form const & form);
 	class GradeTooLowException: public std::exception
 	{
 		virtual const char* what() const throw();

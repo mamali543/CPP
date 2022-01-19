@@ -10,7 +10,7 @@ class ShrubberyCreationForm : public Form
 {
 public:
     ShrubberyCreationForm(std::string   target);
-    ~ShrubberyCreationForm();
+    virtual ~ShrubberyCreationForm();
     ShrubberyCreationForm( ShrubberyCreationForm const & old_object);
     ShrubberyCreationForm &	operator=( ShrubberyCreationForm const & other);
 	virtual void execute(Bureaucrat const & executor) const;
