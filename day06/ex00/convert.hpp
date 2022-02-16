@@ -16,21 +16,22 @@ public:
     int         ints;
     float       floats;
     double      doubls;
+    int         var;
     convert(std::string s);
     ~convert();
-    void init_param(std::string p);
-    void parser(std::string p);
-    enum types { c, i, d, f, unavailable };
-    int is_int();
-    int is_double(std::string str);
-    int is_float_double();
-    void    converter();
+    void        init_param(std::string p);
+    void        parser(std::string p);
+    enum        types { c, i, d, f, unavailable };
+    int         is_int();
+    int         is_double(std::string str);
+    int         is_float_double();
+    void        converter();
     std::string write_char();
-    std::string  write_int();
-
+    std::string write_int();
+    std::string write_float();
+    std::string write_double();
 };
+
 std::ostream &operator<<( std::ostream &output, convert &D );
-
-
 
 #endif
